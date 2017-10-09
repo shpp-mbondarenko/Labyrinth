@@ -2,10 +2,6 @@ import java.util.*;
 import java.io.*;
 import java.math.*;
 
-/**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
- **/
 class Player {
   static Queue<Ceil> openList = new LinkedList<Ceil>();
   static Ceil[][] ceiledMaze = new Ceil[1][1];
@@ -244,14 +240,8 @@ class Player {
              for (int i = 0; i < R; i++) {
                 String ROW = in.next(); // C of the characters in '#.TC?' (i.e. one line of the ASCII maze).
                 for (int j = 0; j < C; j++) { 
-                  sourceMaze[i][j] = ROW.charAt(j);
-                    // if(i == KY && j == KX){
-                    //     System.err.print(1);
-                    // }else{
-                    // System.err.print(sourceMaze[i][j]);  
-                    // }
+                  sourceMaze[i][j] = ROW.charAt(j);                    
                 }
-                    // System.err.println("");
               }
               discoverWorld(sourceMaze,visitedMaze,KY,KX,in);
               System.err.print("COME BACK RIGHT"); 
@@ -312,32 +302,12 @@ class Player {
     }
     class Ceil{
 
-      int F, G, H, Y, X;
-      String parent, move;
+      int F, Y, X;
       
-      public int getF() {return F;}
-      public int getG() {return G;}
-      public int getH() {return H;}    
+      public int getF() {return F;}      
       public int getY() {return Y;}    
-      public int getX() {return X;}    
-      public String getParent() {return parent;}
-      public String getMove() {return move;}
-
-      public void setF(int f) {F = f;}
-      public void setG(int g) {G = g;}
-      public void setH(int h) {H = h;}
-      public void setParent(String parent) {this.parent = parent;}
-      public void setMove(String m) {move = m;}       
-
-      Ceil (int f,int g, int h, String m, String p, int y, int x) {        
-        parent = p;
-        move = m;
-        F = f;
-        G = g;
-        H = h;               
-        Y = y;               
-        X = x;               
-      }
+      public int getX() {return X;}     
+      
       Ceil(int f, int y, int x){
         F = f;              
         Y = y;               
